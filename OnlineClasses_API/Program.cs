@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using OnlineClasses_API.Data.Entities;
+
 namespace OnlineClasses_API
 {
     public class Program
@@ -7,6 +10,14 @@ namespace OnlineClasses_API
         {
             #region ServicesDI
             var builder = WebApplication.CreateBuilder(args);
+            var configuration = builder.Configuration;
+
+            builder.Services.AddDbContext<OnlineCourseDbContext>(options =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString("DbContext"),
+                    provideroptions => provideroptions.EnableRetryOnFailure());
+            });
+
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -19,6 +30,7 @@ namespace OnlineClasses_API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
