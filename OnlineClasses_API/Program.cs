@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
+using OnlineClasses_API.Data;
 using OnlineClasses_API.Data.Entities;
+using OnlineClasses_API.Services;
 
 namespace OnlineClasses_API
 {
@@ -21,6 +23,9 @@ namespace OnlineClasses_API
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddScoped<ICoursesCategoryRepository, CoursesCategoryRepository>();
+            builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
             #endregion
 
             #region Middleware

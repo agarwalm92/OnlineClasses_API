@@ -25,7 +25,7 @@ public partial class Review
 
     [ForeignKey("CourseId")]
     [InverseProperty("Reviews")]
-    public virtual Course Course { get; set; } = null!;
+    public virtual CourseModel Course { get; set; } = null!;
 
     [ForeignKey("UserId")]
     [InverseProperty("Reviews")]

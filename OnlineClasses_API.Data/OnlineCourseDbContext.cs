@@ -11,7 +11,7 @@ public partial class OnlineCourseDbContext : DbContext
     public OnlineCourseDbContext(DbContextOptions<OnlineCourseDbContext> options): base(options)
     {
     }
-    public virtual DbSet<Course> Courses { get; set; }
+    public virtual DbSet<CourseModel> Courses { get; set; }
 
     public virtual DbSet<CourseCategory> CourseCategories { get; set; }
 
@@ -37,7 +37,7 @@ public partial class OnlineCourseDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Course>(entity =>
+        modelBuilder.Entity<CourseModel>(entity =>
         {
             entity.HasKey(e => e.CourseId).HasName("PK_Course_CourseId");
 
