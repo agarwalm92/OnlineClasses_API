@@ -26,7 +26,7 @@ public partial class Instructor
     public int UserId { get; set; }
 
     [InverseProperty("Instructor")]
-    public virtual ICollection<CourseModel> Courses { get; set; } = new List<CourseModel>();
+    public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
 
     [ForeignKey("UserId")]
     [InverseProperty("Instructors")]

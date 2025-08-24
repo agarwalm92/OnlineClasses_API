@@ -24,7 +24,7 @@ public partial class Enrollment
 
     [ForeignKey("CourseId")]
     [InverseProperty("Enrollments")]
-    public virtual CourseModel Course { get; set; } = null!;
+    public virtual Course Course { get; set; } = null!;
 
     [InverseProperty("Enrollment")]
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();

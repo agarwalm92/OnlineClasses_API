@@ -25,5 +25,5 @@ public partial class SessionDetail
 
     [ForeignKey("CourseId")]
     [InverseProperty("SessionDetails")]
-    public virtual CourseModel Course { get; set; } = null!;
+    public virtual Course Course { get; set; } = null!;
 }

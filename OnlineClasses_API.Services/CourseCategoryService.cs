@@ -20,7 +20,7 @@ namespace OnlineClasses_API.Services
         public async Task<CourseCategoryModel?> GetCourseCategoryById_Async(int id)
         {
             CourseCategory data = await coursesCategory.GetCourseCategoryById_Async(id);
-            return new CourseCategoryModel
+            return data == null ? null : new CourseCategoryModel
             {
                 CategoryId = data.CategoryId,
                 Description = data.Description,

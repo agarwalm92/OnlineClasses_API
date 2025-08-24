@@ -26,6 +26,8 @@ namespace OnlineClasses_API
 
             builder.Services.AddScoped<ICoursesCategoryRepository, CoursesCategoryRepository>();
             builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+            builder.Services.AddScoped<ICourseService, CourseService>();
             #endregion
 
             #region Middleware

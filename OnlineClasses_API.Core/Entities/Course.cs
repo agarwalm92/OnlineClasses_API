@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace OnlineClasses_API.Core.Entities;
 
 [Table("Course")]
-public partial class CourseModel
+public partial class Course
 {
     [Key]
     public int CourseId { get; set; }

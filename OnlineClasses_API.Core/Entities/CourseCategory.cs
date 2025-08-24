@@ -19,5 +19,5 @@ public partial class CourseCategory
     public string? Description { get; set; }
 
     [InverseProperty("Category")]
-    public virtual ICollection<CourseModel> Courses { get; set; } = new List<CourseModel>();
+    public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
 }
